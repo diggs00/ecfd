@@ -284,7 +284,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0b2037;
+  color: #174577;
   text-decoration: underline;
 }
 a:focus {
@@ -1977,7 +1977,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #0b2037;
+  color: #174577;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -2738,8 +2738,8 @@ button.close {
   border-bottom-color: #174577;
 }
 .nav a:hover .caret {
-  border-top-color: #0b2037;
-  border-bottom-color: #0b2037;
+  border-top-color: #174577;
+  border-bottom-color: #174577;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -4987,6 +4987,30 @@ blockquote.pull-right small:after {
   color: #174577;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.affix {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+.masthead {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 2px 2px 0px #cccccc;
+  box-shadow: 0 2px 2px 0px #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.masthead ul {
+  padding: 10px;
+}
+.masthead ul li {
+  padding: 12px;
+}
+.masthead ul li a {
+  text-decoration: none;
+}
+.masthead ul li a:hover {
+  border-top: 5px solid #f1a724;
+  text-decoration: none;
 }
 /*!
  *  Font Awesome 3.2.1

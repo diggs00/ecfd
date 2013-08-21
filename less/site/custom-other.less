@@ -66,11 +66,8 @@ blockquote {
 // Intro
 // --------------------------------------------------
 
-// .intro {
-// 	border-top: 5px solid @brand-primary;
-// 	background-color: @gray-lighter;
-// 	padding: @padding-large-vertical * 2;
-// }
+
+
 
 .intro-text {
 	border-top: 1px solid @gray-light;
@@ -78,6 +75,9 @@ blockquote {
 	padding: @padding-small-vertical;
 	margin-bottom:@margin-medium;
 }
+
+
+
 
 .list-inline {
   margin-top: @margin-none;
@@ -98,6 +98,50 @@ blockquote {
   margin-top: @margin-none;
   margin-bottom: @margin-none;
 }
+
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+  top:0px;
+  width: 100%;
+}
+
+
+
+// Masthead
+// -------------------------
+
+.masthead {
+  background-color: @white;
+  .box-shadow(0 2px 2px 0px @gray-light);
+  border-bottom: 1px solid @gray-light;
+}
+
+
+.masthead ul {
+  padding:@padding-small-vertical;
+}
+
+
+.masthead ul li{
+  padding:@padding-base-horizontal;
+}
+
+
+.masthead ul li a {
+  text-decoration: none;
+}
+
+
+.masthead ul li a:hover{
+  border-top: 5px solid @brand-secondary;
+  text-decoration: none;
+}
+
 
 
 
