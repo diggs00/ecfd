@@ -63,28 +63,20 @@ blockquote {
 
 
 //
-// Intro
+// Quote
 // --------------------------------------------------
 
-
-
-
-.intro-text {
+.quote-text {
 	border-top: 1px solid @gray-light;
 	border-bottom: 1px solid @gray-light;
 	padding: @padding-small-vertical;
 	margin-bottom:@margin-medium;
 }
 
-
-
-
 .list-inline {
   margin-top: @margin-none;
   margin-bottom: @margin-none;
 }
-
-
 
 .list-inline li.bullet {
   color: @brand-primary;
@@ -108,6 +100,7 @@ blockquote {
   position: fixed;
   top:0px;
   width: 100%;
+  z-index: 5000000;
 }
 
 
@@ -117,8 +110,9 @@ blockquote {
 
 .masthead {
   background-color: @white;
-  .box-shadow(0 2px 2px 0px @gray-light);
+  .box-shadow(rgba(0, 0, 0, .10) 0px 2px 2px 0px );
   border-bottom: 1px solid @gray-light;
+
 }
 
 
@@ -145,3 +139,40 @@ blockquote {
 
 
 
+
+
+// Hero Section
+// -------------------------
+
+.hero {
+    width: 100%;
+    height: 392px;
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    position: relative;
+    z-index: -5000;
+}
+
+
+
+// Welcome Section
+// -------------------------
+
+
+.home-text-area {
+  padding: @padding-large-vertical 0px @padding-large-vertical 0px;
+  border-bottom: 1px solid @gray-light;
+  margin-bottom: @margin-xlarge;
+}
+
+
+.home-text-area h1 {
+  margin-bottom: @margin-xlarge;
+}
+
+
+.home-icon-area {
+  
+}
