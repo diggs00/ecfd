@@ -1,7 +1,5 @@
 
-p {
-  margin: 0 0 @line-height-none;
-}
+
 .lead {
   margin-bottom: @line-height-none;
   font-size: (@font-size-base * 1.15);
@@ -78,14 +76,14 @@ blockquote {
   margin-bottom: @margin-none;
 }
 
-.list-inline li.bullet {
+blockquote .list-inline li.bullet {
   color: @brand-primary;
   font-size: 4px;
   margin-top: @margin-none;
   vertical-align: middle;
 }
 
-.list-inline small {
+blockquote .list-inline small {
   color: @brand-primary;
   margin-top: @margin-none;
   margin-bottom: @margin-none;
@@ -144,35 +142,107 @@ blockquote {
 // Hero Section
 // -------------------------
 
-.hero {
-    width: 100%;
-    height: 392px;
-    background-image: url("../img/hero.jpg");
-    background-size: cover;
+img.hero {
+     width: 100%;
     background-repeat: no-repeat;
-    // background-position: 50% 50%;
     position: relative;
     z-index: -5000;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+
 }
 
 
 
-// Welcome Section
+// Home Section
 // -------------------------
 
 
-.home-text-area {
+.section-intro-text {
   padding: @padding-large-vertical 0px @padding-large-vertical 0px;
   border-bottom: 1px solid @gray-light;
   margin-bottom: @margin-xlarge;
 }
 
 
-.home-text-area h1 {
+.section-intro-text h1 {
   margin-bottom: @margin-xlarge;
 }
 
 
-.home-icon-area {
-  
+.section-text {
+  padding: 0px 0px @padding-large-vertical 0px;
+  border-bottom: 1px solid @gray-light;
+  margin-bottom: @margin-xlarge;
+}
+
+
+.section-text-last {
+  padding: 0px 0px @padding-large-vertical 0px;
+  margin-bottom: @margin-xlarge;
+}
+
+.section-text-last .seal {
+  margin-bottom: @margin-xlarge;
+}
+
+.section-text-last a:hover{
+  text-decoration: none;
+}
+
+
+
+footer{
+  background-color: @brand-primary;
+  padding: @padding-small-vertical 0px @padding-small-vertical 0px;
+  color:@white;
+}
+
+footer a, footer a:hover{
+  color: @white;
+  text-decoration: none;
+}
+
+.pipe ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+
+ } 
+
+ .pipe ul li {
+   margin-left: 0;
+   padding: 3px 10px;
+   border-left: 1px solid @white;
+   list-style: none;
+   display: inline;
+ }
+
+.pipe ul li.first {
+  margin-left: 0;
+  border-left: none;
+  list-style: none;
+  display: inline;
+  padding: 3px 10px 3px 0px;
+ }
+
+
+footer .list-inline li.bullet {
+  font-size: 4px;
+  margin-top: @margin-none;
+  vertical-align: middle;
+}
+
+footer .list-inline small {
+  margin-top: @margin-none;
+  margin-bottom: @margin-none;
+}
+
+.address {
+  text-align: none;
+    @media (min-width: @screen-tablet) {
+    text-align: right;
+  }
 }
