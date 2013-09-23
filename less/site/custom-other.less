@@ -12,13 +12,74 @@
 }
 
 
-// Blockquotes
+blockquote.inpage .lead {
+  margin-bottom: @line-height-none;
+  font-size: (@font-size-base * 1.15);
+  font-weight: 200;
+  line-height: 1.4;
+
+  @media (min-width: 768px) {
+    font-size: (@font-size-base * 1.5);
+  }
+}
+
+
+
+// // Blockquotes Homepage
+// ------------------------------------
 blockquote {
   padding: @padding-large-vertical;
   margin: 0px;
   border-left: 0px;
-  border-top: 5px solid @brand-primary;
+  border-top: 0px solid @brand-primary;
   background-color: @gray-lighter;
+  p {
+    font-size: (@font-size-base * 1.25);
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  small {
+    display: block;
+    line-height: @line-height-base;
+    color: @blockquote-small-color;
+    &:before {
+      content: none;// EM DASH, NBSP
+    }
+  }
+
+  // Float right with text-align: right
+  &.pull-right {
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid @blockquote-border-color;
+    border-left: 0;
+    p,
+    small {
+      text-align: right;
+    }
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014';// NBSP, EM DASH
+      }
+    }
+  }
+}
+
+
+// // Blockquotes About
+// ------------------------------------
+blockquote.inpage {
+  padding: 0px @padding-large-vertical 20px @padding-large-vertical;
+  margin: 0px 0px @margin-xlarge 0px;
+  border-left: 0px;
+  border-top: 0px solid @brand-primary;
+  background-color: @white;
   p {
     font-size: (@font-size-base * 1.25);
     font-weight: 300;
@@ -60,6 +121,7 @@ blockquote {
 
 
 
+
 //
 // Quote
 // --------------------------------------------------
@@ -67,9 +129,12 @@ blockquote {
 .quote-text {
 	border-top: 1px solid @gray-light;
 	border-bottom: 1px solid @gray-light;
-	padding: @padding-small-vertical;
+	padding: @padding-large-vertical;
 	margin-bottom:@margin-medium;
 }
+
+
+
 
 .list-inline {
   margin-top: @margin-none;
@@ -96,12 +161,21 @@ blockquote .list-inline small {
 
 .affix {
   position: fixed;
-  top:0px;
+  top:5px;
   width: 100%;
   z-index: 5000000;
 }
 
 
+
+.sticky-bar {
+  background-color: @brand-primary;
+  height:5px;
+  position: fixed;
+  top:0px;
+  width:100%;
+  z-index: 4000000;
+}
 
 // Masthead
 // -------------------------
@@ -136,11 +210,18 @@ blockquote .list-inline small {
 
 
 
+.masthead ul li a.masthead-link-active{
+  border-top: 5px solid @brand-secondary;
+}
 
 
 
-// Hero Section
+
+
+
+// Home Section
 // -------------------------
+
 
 img.hero {
      width: 100%;
@@ -153,11 +234,6 @@ img.hero {
     background-size: cover;
 
 }
-
-
-
-// Home Section
-// -------------------------
 
 
 .section-intro-text {
@@ -180,7 +256,7 @@ img.hero {
 
 
 .section-text-last {
-  padding: 0px 0px @padding-large-vertical 0px;
+  padding: 30px 0px @padding-large-vertical 0px;
   margin-bottom: @margin-xlarge;
 }
 
@@ -192,16 +268,194 @@ img.hero {
   text-decoration: none;
 }
 
+// END Home Section
+// ------------------------- 
 
 
+
+
+// About Section
+// -------------------------
+
+
+.hero-about{
+  margin-top: 134px;
+  position:relative;
+}
+
+.hero-about img{
+  width: 100%;
+}
+
+.hero-tag {
+  position: absolute;
+  background-color: @brand-secondary;
+  top:10px;
+  color: @white;
+  padding:5px 10px 5px 10px;
+  -moz-border-top-right-radius:3px;
+  -moz-border-bottom-right-radius:3px;
+  border-top-right-radius:3px;
+  border-bottom-right-radius:3px;
+    .box-shadow(rgba(0, 0, 0, .5) 2px 2px 2px 0px );
+
+}
+
+.hero-tag h2 {
+  line-height: 20px;
+  font-size: 18px;
+  margin: 0px;
+}
+
+
+@media (min-width: @screen-tablet) {
+  .hero-tag {
+    top:16px;
+    padding:10px 25px 10px 25px;
+  }
+
+  .hero-tag h2 {
+    line-height: 22px;
+    font-size: 22px;
+  }
+}
+
+
+
+@media (min-width: @screen-desktop) {
+  .hero-tag {
+    top:22px;
+    padding:10px 35px 10px 35px;
+  }
+
+  .hero-tag h2 {
+    line-height: 28px;
+    font-size: 28px;
+  }
+}
+
+
+@media (min-width: @screen-large-desktop) {
+  .hero-tag h2 {
+    line-height: 34px;
+    font-size: 32px;
+  }
+
+  .hero-tag {
+    top:25px;
+    padding:14px 50px 14px 50px;
+  }
+}
+
+
+
+
+.section-intro-text-no-border-bottom {
+  padding: @padding-large-vertical 0px @padding-large-vertical 0px;
+  margin-bottom: 20px;
+}
+
+
+.section-text-alt-two {
+  padding: 0px 0px 0px 0px;
+  border-bottom: 1px solid @gray-light;
+  margin-bottom: @margin-xlarge;
+}
+
+
+.about-thumb img {
+  margin-bottom: 30px;
+  width:100%;
+}
+
+
+// New Patients
+// ------------------------- 
+
+.section-intro-text-no-border-bottom h1{
+  margin-bottom: @margin-xlarge;
+
+}
+
+
+.margin-bottom-large {
+  margin-bottom: @margin-large;
+}
+
+
+.margin-top-large {
+  margin-top: @margin-large;
+}
+
+.supporting-image {
+  float:left;
+}
+
+
+
+.image-text {
+  margin-left:85px;
+}
+
+
+.section-text-alt {
+  padding: 0px 0px 30px 0px;
+  border-bottom: 1px solid @gray-light;
+  margin-bottom: @margin-xlarge;
+}
+
+
+
+
+
+
+// services
+// ------------------------- 
+.services {
+  margin-bottom: 30px;
+
+}
+
+.services img{
+  margin-bottom: 10px;
+  width:100%;
+}
+
+.whitening img {
+  width:100%;
+}
+
+
+.contact img {
+  width:100%;
+  margin-bottom:20px;
+}
+
+// Footer Section
+// ------------------------- 
 footer{
+  background-color: @gray-lighter;
+  padding: @padding-small-vertical 0px @padding-small-vertical 0px;
+  border-top: 1px solid @gray-light;
+}
+
+
+.footer-blue-section{
   background-color: @brand-primary;
   padding: @padding-small-vertical 0px @padding-small-vertical 0px;
+  border-top: 1px solid @gray-light;
   color:@white;
 }
 
-footer a, footer a:hover{
+
+.footer-blue-section a, .footer-blue-section a:hover{
   color: @white;
+  text-decoration: none;
+}
+
+
+footer a, footer a:hover{
+  color: @brand-primary;
   text-decoration: none;
 }
 
@@ -246,3 +500,7 @@ footer .list-inline small {
     text-align: right;
   }
 }
+
+
+// END Footer Section
+// ------------------------- 
