@@ -206,18 +206,178 @@ blockquote .list-inline small {
 .masthead ul li a:hover{
   border-top: 5px solid @brand-secondary;
   text-decoration: none;
+
+  @media (max-width: 768px) {
+  border-top: 0px solid @brand-secondary;
+  text-decoration: none;
+  }
+
 }
 
+
+.masthead ul li.brandy a:hover{
+  border-top: 0px;
+  text-decoration: none;
+}
 
 
 .masthead ul li a.masthead-link-active{
   border-top: 5px solid @brand-secondary;
+    @media (max-width: 768px) {
+  border-top: 0px solid @brand-secondary;
+  }
+}
+
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  .navbar-vertical-align(-10px);
+  background-color: transparent;
+  border: 0px solid @gray;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+  }
+
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: @brand-primary;
+    border-radius: 1px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: none;
+  }
 }
 
 
 
 
 
+.navbar-collapse {
+  padding-right: @navbar-padding-horizontal;
+  padding-left:  @navbar-padding-horizontal;
+  border-top: 1px solid darken(@navbar-bg, 7%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  // Clear floated elements and prevent collapsing of padding
+  .clearfix();
+
+  // This is not automatically added to the `.navbar-fixed-top` because it causes
+  // z-index bugs in iOS7 (possibly earlier).
+  max-height: 340px;
+  overflow-x: visible;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: @grid-float-breakpoint) {
+    width: auto;
+    padding-right: 0;
+    padding-left:  0;
+    border-top: 0;
+    box-shadow: none;
+
+    &.collapse {
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+    }
+  }
+}
+
+
+
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: none;
+    margin: 0;
+
+  }
+
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+    padding: 12px;
+  }
+  .navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+  }
+}
+
+
+
+.navbar-nav {
+  padding-top:   0;
+  padding-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+
+  > li > a {
+    padding-top:    0px;
+    padding-bottom: 0px;
+    color: @brand-primary;
+    line-height: @line-height-computed;
+    &:hover,
+    &:focus {
+      color: @brand-primary;
+      background-color: #fff;
+    }
+  }
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @brand-primary;
+      background-color: #fff;
+    }
+  }
+  > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @brand-primary;
+      background-color: #fff;
+    }
+  }
+}
+
+
+
+.nav > li > a {
+  padding:0px;
+}
+
+
+
+
+.navbar-brand {
+  @media (min-width: 768px) {
+    display:none;
+  }
+}
+
+
+li.brandy {
+  @media (max-width: 768px) {
+    display:none;
+  }
+}
 
 // Home Section
 // -------------------------
@@ -297,7 +457,7 @@ img.hero {
   -moz-border-bottom-right-radius:3px;
   border-top-right-radius:3px;
   border-bottom-right-radius:3px;
-    .box-shadow(rgba(0, 0, 0, .5) 2px 2px 2px 0px );
+    .box-shadow(rgba(0, 0, 0, .25) 2px 2px 2px 0px );
 
 }
 
@@ -437,6 +597,7 @@ footer{
   background-color: @gray-lighter;
   padding: @padding-small-vertical 0px @padding-small-vertical 0px;
   border-top: 1px solid @gray-light;
+
 }
 
 
@@ -445,6 +606,7 @@ footer{
   padding: @padding-small-vertical 0px @padding-small-vertical 0px;
   border-top: 1px solid @gray-light;
   color:@white;
+  font-family: @font-family-sans-serif;
 }
 
 
